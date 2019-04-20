@@ -1,4 +1,4 @@
 {
-    "Config":"this is the default config file that will be used if something is not in the environment",
+    "Config":"This Config file is used for Development, and the Environment config file if for a production environment variable",
     "db":"mongodb://localhost/refferal"
 }

@@ -2,29 +2,17 @@ const express = require('express');
 const app = express();
 const refferalRoutes = require('./routes/refferal');
 const bodyparser = require('body-parser');
-const config = require('config');
-const mongoose= require('mongoose');
 
 
+require('./startup/mongodb')(); //connect to mongodb
 
-const db = config.get('db');
-mongoose.connect(db, { useNewUrlParser: true })
-.then(()=> console.log(`Connecting to ${db}...`));
-
-
-
+//Allows for parsing json
 app.use(bodyparser.json());
+
+//refferal route with CRUD operations
 app.use('/refferal', refferalRoutes);
 
-
-
-
-app.get('/', (req, res)=>{
-    res.send('Hello world from Root Route');
-});
-
-
-
+//defaults to 4000 if port is not specified
 const port= process.env.PORT || 4000;
 
 app.listen(port, (err)=>{

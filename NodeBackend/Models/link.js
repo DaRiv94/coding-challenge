@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Joi = require('joi');
 
-
+//Link Schema for mongoose to understand how and what to add to mongodb
 const linkSchema = new mongoose.Schema({
     title:{
         type:String,
@@ -19,6 +19,7 @@ const linkSchema = new mongoose.Schema({
 
 const Link = mongoose.model('Link', linkSchema);
 
+//for validating the body with POST and PUT to create and edit a link respectivly
 function validateLink(link){
     const schema ={
         title: Joi.string().min(5).max(50).required(),

@@ -1,95 +1,95 @@
+
 # Ambassador Coding Challenge
 
-Our coding challenge is your opportunity to demonstrate your experience, skills, and aptitude by building a prototype of the web’s most minimal referral automation software.
+## Description of the problem and solution
 
-## How we review
+#### The Problem
+An overview of the problem was to create a basic referral app that demonstrated all CRUD operations and an understanding of foundational software engineering concepts.
+In more detail, some problems faced with this application would be,
+- Storing data in a database
+- Creating an Application Programming Interface to communicate with the database
+- Creating a UI for a user to interact with. 
 
-Your submission will be reviewed by the Ambassador engineering team. We take your experience level into consideration when reviewing.
+#### My approach to the Solution
+- To solve the problem I first listed out on paper the HTTP endpoints I would need to implment the API,
+- I wrote down a basic model of an object that I would call my "Link" object which would have an Id, a title, and a numberOfClicks associated with it.
+- I then thought briefly about a UI and decided to follow the two page Example on the Coding instructions with a page for manageing lists, and a page for each link which would result in an added click (or referral for associated link).
+- I then choose my technologies, deciding to use Node.js and mongodb to create a microservice that represented my backend, and React.js to create a microservice that represented my frontend.
+- I started with my backend microservice, testing all HTTP endpoints useing Postman on the desktop.
+- with basic functionality on the backend, I built out the foundations for the UI.
+- I then began a cycle of adding features to the UI to implement each HTTP endpoint needed and also refactoring the backend as needed.
+- when the cycle ended I had complete functionality of the app.
+- I then proceeded to style the frontend a bit to make it more presentable
 
-We value quality over completeness. If you decide to leave things out, please call attention to it in your project's `README`. We are looking to evaluate your skill set and gain insight into how you approach problem solving.
 
-Our assessment covers the following areas:
+## Solution Focus
 
--	Architecture - How have you decided to structure your app? Is there good separation of concerns?
--	Code quality - Are you following good coding practices? Is your code easy to follow and maintain? Is it testable?
--	Correctness - Does your application work? Does it meet the functional spec?
--	Technical choices - Are your choices of libraries, packages, and tooling appropriate?
+My Solution is a full-stack solution.
 
-Bonus points:
 
--	Testing - Is there adequate test coverage?
--	UX - Is your project easy to use and understand?
+## Technical Reasoning
 
-## Guidelines
+#### Overview
 
-This project may take some time depending on your familiarity with the frameworks and tools you choose. Make your initial commit very small or blank so that we can get a sense of your style and speed. If you have any questions please do not hesitate to [contact us](eng-challenge@getambassador.com).
+For my technical reasoning I will briefly address decision to use...
 
-Begin by forking this repo. You will be completing the challenge in the forked repo and sending a link to your repo when you're finished.
+- a Microservice architecture
+- Node.js
+- Mongodb
+- React.js
 
-### Background
+#### Microservice architecture
 
-The year is 1991, and Tim Berners-Lee has just invented the World Wide Web. As his best friend, he turns to you for help growing this crazy new thing. You decide referral marketing is the most effective way to grow support for Tim’s invention and plan to bring word of mouth to the web in the form of a simple, automated referral system.
+I went with a microservice architecture beacuse in my mind it acheives better separation of concerns for your client side code and your server side code.
+Microservice applications can scale easily with each microservice only being responible for its own functionality. Plus testing and trouble shooting can almost always narrowed down to a singular microservice.
 
-The system you’ve dreamt up is very straightforward. It only needs two pages to satisfy Tim’s needs: one to create, edit, delete, and track referral links and another to serve as a landing page for the links that promotes the World Wide Web.
+#### Node.js
 
-### Functional spec
+I choose to use Node.js beacuse it fast, uses NPM, and can be very powerful with very little lines of code. Node.js APIs are great with a microservice architecture beacuse of its simplicy, 3rd party library support and Asynchronus capablilites. In addition to these I am very comfortable with Node.js .
 
-The link page is where Tim will manage his referral links. This page should be located at the root of your domain i.e. {your_url}. There should be a form to add links. It only needs one field, which is the unique title of the link e.g. spartans or wolverines. This title will form the referral url e.g. {your_url}/spartans or {your_url}/wolverines. Below this form should be a list of the active referral links with options to edit or delete links. The # of times a link has been clicked should be tracked and displayed next to each link in the list. The link title should link to the Landing Page.
+#### Mongodb
 
-![Link Page](https://lh4.googleusercontent.com/E03q_HNyAyBCgyuiLN_UMkqmygSH4k1n2sZAG5p4EyothDtwXIh81nuXF0--JUsJs3PQaJJV_oIKvVqIPlNSU96Q4zT3N1f6E6Pl0XJk7wdqruNi69RlV7yUd_FhztzJEbZUkA)
+I choose Mongodb as my database beacuse its fast, its a no-sql database, and has exellect support when used with Node.js.
 
-The landing page is where each referral link should redirect. This page should be located at its own unique url i.e. {your_url}/landing. The content of this page is not important, though you should feel free to use it as a canvas to promote and express your feelings toward the World Wide Web for Tim. When each referral link redirects to the landing page, the link title must be appended as a query parameter in the url e.g. {your_url}/{link_title} or {your_url}/landing/?link={link_title}. The link title should be grabbed from the query parameter and displayed somewhere on the landing page, which is the only content you actually have to include.
+#### React.js
 
-![Landing Page](https://lh3.googleusercontent.com/HFEsNHwWaII66dB_Pa5nm8WZgPOp3F-jSyMxwFAwyO04O7dFlHovFW9hKovR6IbL6eaxCxKlq4iK30r2lVM8-ykjnllC0Ga85MtEenmZ52DnhR3ZhiGRFV_mY44HZClXD8TGIw)
+I choose React.js because it uses javascript meaning I could use the same client for all my client and server side code. React.js is the most popular web framework right now and I am very familiar with it. 
 
-### Technical spec
+## TradeOffs, Features Skipped, what would be done with more time.
 
-Choose one of the following technical tracks to build the functionality described in the Functional spec that best suits your skill set:
+#### TradeOffs
 
--	Back-end track: build a REST API and include a minimal front-end (e.g. a browsable API)
--	Front-end track: build your project as a purely client-side app
--	Full Stack: blend the former approaches, but be sure to demonstrate your competence across the stack
--	Mobile track: use the native SDKs for Android or iOS
+a tradeoff to using a microservice architecture is ensuring each microservice as access to the others while not exposing its self to vunerablities. 
 
-#### Back-end
+#### Features Skipped
 
-Your task is to build a REST API that can support the functionality described for the Link and Landing pages in the functional spec. Your project can be built using any API framework/language, though we encourage the use of [Django Rest Framework](http://www.django-rest-framework.org/)/Python as these are used every day at ambassador. Your API should be able to:
+I thought about possibliy added the ablity to redirect from a referral link directly back to the manage link page but decided agansit with the understanding that if a link were shared and a user were to click on the link, that user would not nesscarily be a user that is authorized to manage the list of links.
 
--	Perform CRUD actions for Link pages
--	Track the number of visits to the Landing Page
+#### what would be done with more time
 
-You do not have to build a functional UI unless you want to show off your talents across the stack. We will test your API by using the Browsable API. You are encouraged to write tests to verify your own results.
+If I had more time I would add more styling and fix up the UI in the way that it interacts to responsiveness and make sure it looks good in a mobile device.
 
-#### Front-end
+## Link to hosted application
 
-Your project can be built using any JavaScript or CSS framework, though we encourage ReactJS, Redux and CSS/SCSS as these are used every day at Ambassador. You are also welcome to use our [React-ions library](https://www.npmjs.com/package/react-ions) to help build your UI.
+The React.js frontend microservice is hosted on [Surge](https://surge.sh/) which hosts static webpages for free.
+You can access it at [https://ref-react-frontend.surge.sh/](https://ref-react-frontend.surge.sh/)
 
-Alternatively, feel free to swap out similar JavaScript frameworks such as Angular and UI kits such as Bootstrap. In addition to building the referral application, complete the HTML/CSS challenge which can be found in the `/html-css-exercise` [folder in the repo](https://github.com/GetAmbassador/coding-challenge/tree/master/html-css-exercise).
+The Node.js app whch uses MonngoDb Atlas as its mongodb cloud provider is hosted on [Heroku](https://dashboard.heroku.com) running in [Docker](https://www.docker.com/) a container. it can be found at [https://refnodeapp.herokuapp.com/](https://refnodeapp.herokuapp.com/)
 
-#### Mobile
+**Note: Cors IS enabled for the api, allowed origins are http://localhost:3000 and https://ref-react-frontend.surge.sh . To use another origin you will need to pull the backend app and remove cors(corsOptions) middleware for a or more routes in referral.js in the routes folder of the api.**
 
-If you're interviewing for a mobile position, use the native SDKs for Android or iOS to build the UI described above. Usage of open-source libraries is not required, but feel free to demonstrate your knowledge of the mobile ecosystem (ex. the libraries at http://square.github.io/). If you're interviewing for a combination Front-end/Mobile position, you can blend in your Front-end work into the app using a WebView.
+## My other projects!
 
-#### README
+Here are some of my other projects. I have developed each of these from end to end without any other contributors.
+links go to the repository for each application. 
 
-In your repo, please include the following items in your README:
+[Computer Vision Api Example](https://github.com/DaRiv94/ComputerVisionApiExample) - Full-Stack app that uses Microsoft Azure Cloud's Cognitive Services
+[GigHub](https://github.com/DaRiv94/GigHub) - Example full-stack ASP.NET Core app for concert lovers.
+[Geolocation](https://github.com/DaRiv94/FGR-Geolocation-App) - React front-end app that consumes external apis to find location.
+[FGR API Docs](https://github.com/DaRiv94/FGR-API-Docs) - React front-end app that consumes FGR APIs.
+[FGR Vidly API](https://github.com/DaRiv94/FGR-Vidly-API) - Back-end api built with Node.js and MongoDB.
+[FGR President API](https://github.com/DaRiv94/FGR-President-API) - Back-end api built with Node.js and Azure Table Storage.
+[FGR US Colony API](https://github.com/DaRiv94/USColoniesAzureFunction) - Back-end serverless api built with an Azure Function in the Azure cloud
 
--	Description of the problem and solution.
--	Whether the solution focuses on back-end, front-end, full stack, or mobile.
--	Reasoning behind your technical choices, including architecture.
--	Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project.
--	Link to the hosted application (where applicable).
+More information on each of these apps can be found at my portfolio website [http://frankieriviera.com/portfolio](http://frankieriviera.com/portfolio)
 
-This will give us insight into how you approached the challenge.
-
-### Deployment
-
-When you're done, please deploy your project to [Heroku](https://dashboard.heroku.com). You may deploy to another service (such as AWS), but please include your reasoning behind this choice. Afterward, send a link to your repo. If you have chosen to make your repo private, please add `jarell-lloyd` and `fieldsco` as an admin so we can see your work.
-
-## Show us your other projects! (optional)
-
-If you have existing code that you would like to share, please follow these guidelines:
-
--	Include a link to the repository in the README file that is part of your coding challenge submission
--	A description of what the code does
--	If the repository has multiple contributors, please highlight the parts for which you were responsible

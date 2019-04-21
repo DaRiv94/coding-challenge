@@ -74,9 +74,9 @@ If I had more time I would add more styling and fix up the UI in the way that it
 The React.js frontend microservice is hosted on [Surge](https://surge.sh/) which hosts static webpages for free.
 You can access it at [https://ref-react-frontend.surge.sh/](https://ref-react-frontend.surge.sh/)
 
-The Node.js app whch uses MonngoDb Atlas as its mongodb cloud provider is hosted on [Heroku](https://dashboard.heroku.com) running in [Docker](https://www.docker.com/) a container. it can be found at [https://refnodeapp.herokuapp.com/](https://refnodeapp.herokuapp.com/)
+The Node.js app which uses MonngoDb Atlas as its mongodb cloud provider is hosted on [Heroku](https://dashboard.heroku.com) running in [Docker](https://www.docker.com/) a container. it can be found at [https://refnodeapp.herokuapp.com/](https://refnodeapp.herokuapp.com/)
 
-**Note: Cors IS enabled for the api, allowed origins are http://localhost:3000 and https://ref-react-frontend.surge.sh . To use another origin you will need to pull the backend app and remove cors(corsOptions) middleware for a or more routes in referral.js in the routes folder of the api.**
+**Note: Cors IS enabled for the api, allowed origins are http://localhost:3000 and https://ref-react-frontend.surge.sh . To use another origin you will need to pull the backend app and remove 'cors(corsOptions)' middleware for a or more routes in referral.js in the routes folder of the api.**
 
 ## My other projects!
 

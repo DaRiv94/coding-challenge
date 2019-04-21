@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const refferalRoutes = require('./routes/refferal');
 const bodyparser = require('body-parser');
+const cors= require('cors');
 
 
 require('./startup/mongodb')(); //connect to mongodb
@@ -10,6 +11,7 @@ require('./startup/mongodb')(); //connect to mongodb
 app.use(bodyparser.json());
 
 
+app.options('*', cors()) // include before other routes
 
 
 //refferal route with CRUD operations

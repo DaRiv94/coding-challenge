@@ -2,6 +2,7 @@
 
 module.exports = function(){
 
+  
 
     var whitelist = ['http://localhost:3000', 'https://ref-react-frontend.surge.sh']
 var corsOptions = {

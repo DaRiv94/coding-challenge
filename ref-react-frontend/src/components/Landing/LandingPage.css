@@ -1,0 +1,11 @@
+.landingDiv{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.landingDiv h1{
+    padding-top: 10vh;
+    padding-bottom: 20px;
+}

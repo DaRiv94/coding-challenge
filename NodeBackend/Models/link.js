@@ -6,7 +6,7 @@ const linkSchema = new mongoose.Schema({
     title:{
         type:String,
         required: true,
-        minlength:5,
+        minlength:1,
         maxlength:50
         },
     numberOfClicks:{
@@ -22,7 +22,7 @@ const Link = mongoose.model('Link', linkSchema);
 //for validating the body with POST and PUT to create and edit a link respectivly
 function validateLink(link){
     const schema ={
-        title: Joi.string().min(5).max(50).required(),
+        title: Joi.string().min(1).max(50).required(),
     }
 
     return Joi.validate(link, schema)

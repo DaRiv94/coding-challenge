@@ -1,0 +1,39 @@
+.EditingLinkInput{
+    margin: 0px;
+    padding: 0px;
+    min-height: 48px;
+    min-width: 100%;
+    padding-left: 12px;
+    margin-right: 10px;
+}
+
+.table{
+    text-align: center;
+}
+
+.table th.EditingTh{
+    padding: 0px;
+}
+
+.table td.EditingTd{
+    padding: 0px;
+}
+
+.table td.EditingTd #EditBtn{
+    padding-top: 10px;
+    border-radius: 0px;
+    min-height: 48px;
+    min-width: 100%;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.edit:hover, .delete:hover{
+    background-color: lightgray;
+}
+
+.edit:active, .delete:active{
+    background-color: rgb(155, 155, 155);
+}

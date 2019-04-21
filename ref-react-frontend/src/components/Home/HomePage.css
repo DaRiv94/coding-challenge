@@ -1,0 +1,50 @@
+body{
+    padding: 20px;
+}
+
+header{
+    text-align: center;
+    font-size: 30px;
+}
+
+.NewLinkDiv{
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    padding: 20px;
+}
+
+.NewLinkDiv label{
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+.NewLinkDiv input {
+    min-width: 30vw;
+    min-height: 38px;
+    margin-right: 0px;
+    margin-top: 1px;
+    /* border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px; */
+
+    border-radius: 0px;
+    border: 2px solid lightgray;
+
+}
+
+.NewLinkDiv button{
+    /* margin-bottom: 5px; */
+    /* border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px; */
+
+    border-radius: 0px;
+
+    min-width: 65px;
+
+}
+
+
+@media(max-width: 576px){
+
+}

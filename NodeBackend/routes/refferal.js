@@ -80,13 +80,16 @@ router.put('/:id', cors(corsOptions), async (req, res) => {
           let link = await Link.findById(req.params.id);
           if (!link) return res.status(404).send(`No link found with id: ${req.params.id}`);
 
-          //Validate that there is not another link with new title
-          let linkTitle = await Link.findOne({ title: req.body.title });
-          if (linkTitle) return res.status(400).send('there is already a link with that title.');
+          if(link.title !== req.body.title){
+               //Validate that there is not another link with new title
+               let linkTitle = await Link.findOne({ title: req.body.title });
+               if (linkTitle) return res.status(400).send('there is already a link with that title.');
 
-          link.title = req.body.title;
+               link.title = req.body.title;
 
-          await link.save();
+               await link.save();
+          }
+          
 
           return res.send(link);
      }
@@ -98,12 +101,12 @@ router.put('/:id', cors(corsOptions), async (req, res) => {
 
 });
 
-//Add Click to link by id
-router.put('/click/:id', cors(corsOptions), async (req, res) => {
+//Add Click to link by title
+router.put('/click/:title', cors(), async (req, res) => {
      try{
-          //Validate Id
-          let link = await Link.findById(req.params.id);
-          if (!link) return res.status(404).send(`No link found with id: ${req.params.id}`);
+            //Validate that there is not another link with new title
+            let link = await Link.findOne({ title: req.params.title });
+            if (!link) return res.status(404).send(`there is no link with title: req.body.title`);
 
           link.numberOfClicks = link.numberOfClicks + 1;
 

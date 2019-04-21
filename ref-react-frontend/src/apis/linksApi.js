@@ -25,6 +25,7 @@ const axiosBaseUrl="https://refnodeapp.herokuapp.com" //When using Node Api host
 
 class LinkApi {
 
+    //Create a new link with new title
     static CreateNewLink(title) {
         return new Promise(async (resolve, reject) => {
             
@@ -52,7 +53,7 @@ class LinkApi {
         });
     }
 
-
+    //Get all links
     static GetAllLinks() {
         return new Promise(async (resolve, reject) => {
 
@@ -66,6 +67,7 @@ class LinkApi {
         });
     }
 
+    //Get link by id
     static GetLinkById(id){
         return new Promise(async (resolve, reject) => {
 
@@ -81,6 +83,7 @@ class LinkApi {
         });
     }
 
+    //Edit Title by id and new title
     static EditTitleById(id,title){
         return new Promise(async (resolve, reject) => {
 
@@ -104,6 +107,7 @@ class LinkApi {
         });
     }
 
+    //increase click count for a link by its title
     static IncreaseClicksByTitle(title) {
         return new Promise(async (resolve, reject) => {
 
@@ -119,6 +123,7 @@ class LinkApi {
         });
     }
 
+    //delete a link by its id
     static DeleteLinkById(id) {
         return new Promise(async (resolve, reject) => {
 

@@ -12,14 +12,13 @@ export class LandingPage extends Component {
     }
   }
   
-
+//When this page is loaded the Query param link is parsed and calls the api to add a click to the link, (assuming it exists)
   componentWillMount(){
     const values = queryString.parse(this.props.location.search);
    
     if(values.link){
 
       LinkApi.IncreaseClicksByTitle(values.link).then(link=>{
-        //console.log(link);
       }).catch(err=>{
         console.log(err);
       });

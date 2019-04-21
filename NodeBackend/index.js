@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const refferalRoutes = require('./routes/refferal');
+const referralRoutes = require('./routes/referral');
 const bodyparser = require('body-parser');
 const cors= require('cors');
 
@@ -14,8 +14,8 @@ app.use(bodyparser.json());
 app.options('*', cors()) // include before other routes
 
 
-//refferal route with CRUD operations
-app.use('/refferal', refferalRoutes);
+//referral route with CRUD operations
+app.use('/referral', referralRoutes);
 
 app.get('/', (req, res)=>{
     res.send("Hello from the index route")

@@ -15,6 +15,7 @@ export class HomePage extends Component {
     this.addLink = this.addLink.bind(this);
     this.deleteById = this.deleteById.bind(this);
     this.editTitleByid = this.editTitleByid.bind(this);
+    this.onKeyPress=this.onKeyPress.bind(this);
   }
 
   //get and display all links
@@ -90,6 +91,13 @@ export class HomePage extends Component {
 
   }
 
+  //saves edit when enter is clicked while focused on input
+  onKeyPress(e) {
+    if (e.key === 'Enter') {
+        document.getElementById("CreateBtn").click();
+        this.setState({NewLink: ""})
+    }
+  }
 
 
   render() {
@@ -98,13 +106,13 @@ export class HomePage extends Component {
 
     return (
       <div>
-        <header>This is the HomePage</header>
+        <header>Grow the web with referrals!</header>
         
           <div className="NewLinkDiv">
             <div className="row">
               <label className="col-sm-2 offset-sm-2" >Add a link: </label>
-              <input className="col-sm-3 " type="text" onChange={this.onInputChange} value={this.state.NewLink} />
-              <button className="btn btn-primary col-sm-1" onClick={this.addLink} >ADD</button>
+              <input className="col-sm-3 " type="text" onKeyPress={this.onKeyPress}  onChange={this.onInputChange} value={this.state.NewLink} />
+              <button id="CreateBtn" className="btn btn-primary col-sm-1" onClick={this.addLink} >ADD</button>
             </div>
             
           </div>

@@ -10,7 +10,7 @@ const axios = require('axios');
 ///////////DOCKER
 //const axiosBaseUrl="http://localhost:<PortRunningContainer>" 
         //Example: PortRunningContainer = 4400 after   "docker container run -p 4400:80 taskmasterimage"
-        //This is for when using the backend dockerimage NOTE: connection string as refferal_db environment variable is required.
+        //This is for when using the backend dockerimage NOTE: connection string as referral_db environment variable is required.
 
 
 
@@ -35,7 +35,7 @@ class LinkApi {
 
                 let titleObject={title};
 
-                const response = await axios.post(axiosBaseUrl+"/refferal", titleObject);
+                const response = await axios.post(axiosBaseUrl+"/referral", titleObject);
                 
                 //console.log("response:", response);
 
@@ -57,7 +57,7 @@ class LinkApi {
         return new Promise(async (resolve, reject) => {
 
             try {
-                const links = await axios.get(axiosBaseUrl + '/refferal');
+                const links = await axios.get(axiosBaseUrl + '/referral');
                 resolve(links.data);
             } catch (err) {
                 reject(err);
@@ -72,7 +72,7 @@ class LinkApi {
             try {
                
 
-                const link = await axios.get(axiosBaseUrl+"/refferal/"+ id);
+                const link = await axios.get(axiosBaseUrl+"/referral/"+ id);
                 resolve(link.data);
             } catch (err) {
                 reject(err);
@@ -89,7 +89,7 @@ class LinkApi {
 
                 if(title){
                     let titleObject={title};
-                    const NewLink = await axios.put(axiosBaseUrl+"/refferal/"+ id, titleObject);
+                    const NewLink = await axios.put(axiosBaseUrl+"/referral/"+ id, titleObject);
                     resolve(NewLink.data);
                 }else{
                     resolve("No Data")
@@ -110,7 +110,7 @@ class LinkApi {
            
 
             try {
-                const linkWithNewClickCount = await axios.put(axiosBaseUrl + '/refferal/click/'+ title);
+                const linkWithNewClickCount = await axios.put(axiosBaseUrl + '/referral/click/'+ title);
                 resolve(linkWithNewClickCount.data);
             } catch (err) {
                 reject(err);
@@ -123,7 +123,7 @@ class LinkApi {
         return new Promise(async (resolve, reject) => {
 
             try {
-                const deletedLink = await axios.delete(axiosBaseUrl + '/refferal/'+id);
+                const deletedLink = await axios.delete(axiosBaseUrl + '/referral/'+id);
                 resolve(deletedLink.data);
             } catch (err) {
                 reject(err);

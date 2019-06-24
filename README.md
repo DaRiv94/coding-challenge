@@ -84,7 +84,6 @@ Here are some of my other projects. I have developed each of these from end to e
 Links go to the repository for each application. 
 
 - [Computer Vision Api Example](https://github.com/DaRiv94/ComputerVisionApiExample) - Full-Stack app that uses Microsoft Azure Cloud's Cognitive Services.
-- [GigHub](https://github.com/DaRiv94/GigHub) - Example full-stack ASP.NET Core app for concert lovers.
 - [Geolocation](https://github.com/DaRiv94/FGR-Geolocation-App) - React front-end app that consumes external apis to find location.
 - [FGR API Docs](https://github.com/DaRiv94/FGR-API-Docs) - React front-end app that consumes FGR APIs.
 - [FGR Vidly API](https://github.com/DaRiv94/FGR-Vidly-API) - Back-end api built with Node.js and MongoDB.
